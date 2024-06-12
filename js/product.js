@@ -1,16 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(element => {
-        observer.observe(element);
+    // Select all product cards
+    const cards = document.querySelectorAll('.card');
+    
+    // Add the fade-in class to each card with a delay
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('fade-in');
+        }, index * 100); // Staggered delay for each card
     });
 });

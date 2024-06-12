@@ -6,6 +6,23 @@
     font-family: Poppins;
     transition: .3s;
 }
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 1.6s ease;
+}
+
+/* Initial state for fade-in effect */
+.card {
+    opacity: 0;
+    transition: opacity 2.5s ease;
+}
+
+/* Class to apply after the page loads */
+.card.fade-in {
+    opacity: 1;
+}
+
 :root {
     --primary-color: #2c3855;
     --primary-color-dark: #435681;
@@ -31,42 +48,6 @@ img {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-nav {
-    max-width: var(--max-width);
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--white);
-    width: 95%;
-    top: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 1rem;
-}
-nav .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-dark);
-}
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-nav .nav-links .link {
-    font-weight: 600;
-    color: var(--text-light);
-    transition: .3s;
-}
-nav .nav-links .link:hover {
-    color: var(--primary-color);
 }
 
 .section-container {
